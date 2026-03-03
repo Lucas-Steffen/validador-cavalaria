@@ -1,0 +1,128 @@
+    <!DOCTYPE html>
+    <html lang="pt-BR">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Validador de Atividades CNIE</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/@phosphor-icons/web"></script>
+        <link rel="stylesheet" href="./styles.css">
+        <style>
+            body { font-family: 'Inter', sans-serif; }
+        </style>
+    </head>
+
+    <body class="bg-gradient-to-br from-black via-gray-900 to-black text-white min-h-screen flex flex-col">
+
+        <div class="rain"></div>
+
+        <div class="flex-1 relative z-10">
+            <div class="max-w-3xl mx-auto px-4 py-10">
+
+                <header class="flex justify-center items-center gap-10 mb-10">
+                    <img src="assets/dm.png" alt="Logo DeMolay" class="w-24 opacity-90 hover:opacity-100 transition">
+                    <img src="assets/GE25-26.png" alt="Logo Gestão" class="w-24 opacity-90 hover:opacity-100 transition">
+                </header>
+
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-center text-blue-400 mb-4 tracking-wide">
+                    Validador de Atividades CNIE
+                </h1>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
+                    <a href="https://wa.me/5565999963772" target="_blank"
+                        class="flex items-center justify-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-6 py-3 rounded-lg transition shadow-lg">
+                        Tirar dúvidas com Assessor
+                    </a>
+
+                    <a href="https://wa.me/5566999045963" target="_blank"
+                        class="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-lg transition shadow-lg">
+                        Reportar Bug
+                    </a>
+                </div>
+                <form id="atividade-form"
+                    class="bg-gray-900 rounded-2xl shadow-2xl p-6 sm:p-8 space-y-6 border border-gray-800">
+
+                    <div>
+                        <label for="capitulo" class="block text-sm font-semibold text-gray-300 mb-2">
+                            Nome do Priorado <span class="text-red-500">*</span>
+                        </label>
+                        <input type="text" id="capitulo"
+                            class="w-full rounded-lg bg-gray-800 border border-gray-700 px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition"
+                            placeholder="Ex: Priorado Estrela do Norte">
+                    </div>
+
+                    <div>
+                        <label for="atividade" class="block text-sm font-semibold text-gray-300 mb-2">
+                            Atividades <span class="text-red-500">*</span>
+                        </label>
+                        <textarea id="atividade"
+                            class="w-full rounded-lg bg-gray-800 border border-gray-700 px-4 py-3 text-white h-44 resize-none focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition"
+                            placeholder="Digite as atividades, uma por linha com data"></textarea>
+                    </div>
+
+                    <div class="flex flex-col gap-3">
+                        <button type="submit"
+                            class="w-full bg-blue-600 hover:bg-blue-700 active:bg-blue-800 transition rounded-lg py-3 font-semibold tracking-wide">
+                            Validar Atividades
+                        </button>
+
+                        <button type="button" id="nova-consulta"
+                            class="w-full bg-gray-700 hover:bg-gray-800 active:bg-gray-900 transition rounded-lg py-3 font-semibold tracking-wide">
+                            Nova Consulta
+                        </button>
+                    </div>
+
+                </form>
+
+                <div id="resultado"
+                    class="hidden mt-10 bg-gray-900/50 backdrop-blur-xl border border-gray-800 rounded-3xl shadow-2xl p-6 sm:p-8 relative">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-2xl font-black text-white tracking-tight flex items-center gap-2">
+                            <i class="ph ph-chart-bar text-blue-500"></i>
+                            Validação
+                        </h2>
+                        <button id="copy-button" 
+                            class="flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white transition-all px-4 py-2 rounded-xl text-sm font-bold shadow-lg shadow-blue-900/20 active:scale-95">
+                            <i class="ph ph-copy"></i>
+                            Copiar Texto
+                        </button>
+                    </div>
+
+                    <div id="resultado-text" class="space-y-4"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="bg-gradient-to-r from-blue-800 via-indigo-900 to-blue-800 border-t border-blue-700">
+            <div class="max-w-4xl mx-auto px-4 py-6 text-center space-y-1 text-sm">
+                <p class="font-semibold text-white">
+                    Desenvolvido por
+                    <span class="text-blue-400 font-bold">Carlos Manoel de Barros Tavares</span> e
+                    <span class="text-blue-400 font-bold">Lucas Gabriel Amorim Steffen</span>
+                </p>
+                <p class="text-gray-300 italic">
+                    Sistema não oficial ao SISDM, sem vínculo com a instituição
+                </p>
+                <p class="text-blue-300">
+                    Versão 3.2.2
+                </p>
+            </div>
+        </footer>
+
+        <script src="./rain.js"></script>
+        <script src="./validador.js"></script>
+        <script>
+            document.getElementById('nova-consulta').addEventListener('click', function () {
+                document.getElementById('capitulo').value = '';
+                document.getElementById('atividade').value = '';
+                document.getElementById('resultado').classList.add('hidden');
+                document.getElementById('resultado-text').textContent = '';
+            });
+        </script>
+
+    </body>
+
+    </html>

@@ -1,0 +1,40 @@
+{
+    "atividades": [
+        {
+            "nome": "Recrutamento I",
+            "data": "20/12/2026",
+            "validacao": true,
+            "mes_obrigatorio": ""
+        },
+        {
+            "nome": "Trabalho Ritualístico",
+            "data": "20/12/2026",
+            "validacao": true,
+            "mes_obrigatorio": ""
+        },
+        {
+            "nome": "Trabalho Filosófico",
+            "data": "20/12/2026",
+            "validacao": true,
+            "mes_obrigatorio": ""
+        },
+        {
+            "nome": "Trabalho Histórico",
+            "data": "20/12/2026",
+            "validacao": true,
+            "mes_obrigatorio": ""
+        },
+        {
+            "nome": "Entretenimento",
+            "data": "31/05/2026",
+            "validacao": true,
+            "mes_obrigatorio": ""
+        },
+        {
+            "nome": "Cerimônia Pública",
+            "data": "20/12/2026",
+            "validacao": true,
+            "mes_obrigatorio": ""
+        }
+    ]
+}
