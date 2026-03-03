@@ -1,6 +1,6 @@
 function createRainDrop() {
   const rainDrop = document.createElement("img");
-  rainDrop.src = "assets/dm.png";
+  rainDrop.src = "assets/cavalaria.png";
   rainDrop.style.position = "absolute";
   rainDrop.style.width = "36px";
   rainDrop.style.opacity = "0.5";
